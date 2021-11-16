@@ -6,7 +6,6 @@ public class Angle {
     private Line line2;
     private double angle;
 
-    // Call constructor in try/catch block
     Angle(Line l1, Line l2) {
         this.line1 = l1;
         this.line2 = l2;
