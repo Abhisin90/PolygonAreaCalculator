@@ -11,8 +11,7 @@ public class Polygon {
         corners = v;
         sides = new Line[4];
         angles = new Angle[4];
-        
-        // Asume anticlockwise traversal starting from bottom-left vertex and bottom side
+        // Assume anticlockwise traversal starting from bottom-left vertex and bottom side
 
         for (int i = 0; i < 4; i++) {
             sides[i] = new Line(corners[i], corners[(i+1)%4]);
