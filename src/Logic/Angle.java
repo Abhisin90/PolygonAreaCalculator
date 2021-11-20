@@ -67,6 +67,13 @@ public class Angle {
     }
 
     public double calculateAngle() {
-        return 0;
+        double m1 = this.getLine1().getSlope();
+        double m2 = this.getLine2().getSlope();
+        double sub2 = (m1-m2)/(1+m1*m2);
+        double sub = Math.abs(sub2);
+        double angle = Math.toDegrees(Math.atan(sub));
+
+        if(sub2<0) return angle ;
+        else return 180.00-angle;
     }
 }
