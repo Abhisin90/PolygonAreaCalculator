@@ -4,7 +4,7 @@ public class Polygon {
     private Vertex[] corners;
     private Line[] sides;
     private Angle[] angles;
-    private int scaleFactor = 1;
+    private double scaleFactor = 1.0;
     private double area;
 
     Polygon(Vertex[] v) {
@@ -34,7 +34,7 @@ public class Polygon {
         return this.angles;
     }
 
-    public int getScaleFactor() {
+    public double getScaleFactor() {
         return this.scaleFactor;
     }
 
@@ -42,7 +42,7 @@ public class Polygon {
         return this.area;
     }
 
-    public void setScaleFactor(int f) {
+    public void setScaleFactor(double f) {
         this.scaleFactor = f;
     }
 
