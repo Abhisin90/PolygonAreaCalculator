@@ -44,7 +44,7 @@ public class MainFrame extends JFrame
         c.add(panel);
 
 
-        ImageIcon icon1=new ImageIcon(MainFrame.class.getResource("menu2.png"));
+        ImageIcon icon1=new ImageIcon(MainFrame.class.getResource("images/menu2.png"));
         JButton back=new JButton(icon1);
         back.setBounds(0,0,50,55);
         back.setBorder(new EtchedBorder(EtchedBorder.RAISED));
@@ -54,7 +54,7 @@ public class MainFrame extends JFrame
 
         JPopupMenu menu=new JPopupMenu();
         menu.setPopupSize(150,300);
-        ImageIcon about1=new ImageIcon(MainFrame.class.getResource("about.png"));
+        ImageIcon about1=new ImageIcon(MainFrame.class.getResource("images/about.png"));
         Image image = about1.getImage(); // transform it
         Image new1 = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it smoothly
         ImageIcon newImageIcon = new ImageIcon(new1);
@@ -67,7 +67,7 @@ public class MainFrame extends JFrame
         
 
 
-        ImageIcon share1=new ImageIcon(MainFrame.class.getResource("share.png"));
+        ImageIcon share1=new ImageIcon(MainFrame.class.getResource("images/share.png"));
         Image image1 = share1.getImage(); // transform it
         Image new2 = image1.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it smoothly
         ImageIcon newImageIcon1 = new ImageIcon(new2);
@@ -83,7 +83,7 @@ public class MainFrame extends JFrame
             }
         });
 
-        ImageIcon save1=new ImageIcon(MainFrame.class.getResource("save.png"));
+        ImageIcon save1=new ImageIcon(MainFrame.class.getResource("images/save.png"));
         Image image2 = save1.getImage(); // transform it
         Image new3 = image2.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it smoothly
         ImageIcon newImageIcon2 = new ImageIcon(new3);
