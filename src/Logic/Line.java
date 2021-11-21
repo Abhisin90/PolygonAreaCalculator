@@ -45,8 +45,8 @@ public class Line {
         this.slope = this.calculateSlope();
     }
 
-    public void setLength() {
-        this.length = this.calculateLength();
+    public void setLength(double sf) {
+        this.length = this.calculateLength(sf);
     }
 
     public double calculateSlope() {
@@ -57,11 +57,11 @@ public class Line {
         return (y1 - y2) / (x1 - x2);
     }
 
-    public double calculateLength() {
+    public double calculateLength(double sf) {
         double x1 = this.getEndPoint1().getX();
         double y1 = this.getEndPoint1().getY();
         double x2 = this.getEndPoint2().getX();
         double y2 = this.getEndPoint2().getY();
-        return Math.sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
+        return Math.sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2)) * sf;
     }
 }
