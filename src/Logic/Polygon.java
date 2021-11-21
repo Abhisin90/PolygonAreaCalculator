@@ -47,6 +47,10 @@ public class Polygon {
     }
 
     public void calculateArea() {
-        // method to calculate area of the polygon
+        double A = Math.toRadians(this.angles[0].getAngle());
+        double C = Math.toRadians(this.angles[2].getAngle());
+        double areaLowerTriangle = 0.5 * this.sides[0].getLength() * this.sides[3].getLength() * Math.sin(A);
+        double areaUpperTriangle = 0.5 * this.sides[1].getLength() * this.sides[2].getLength() * Math.sin(C);
+        this.area = areaLowerTriangle + areaUpperTriangle;
     }
 }
