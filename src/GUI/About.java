@@ -1,4 +1,6 @@
 package GUI;
 
-public class About {
+import javax.swing.*;
+
+public class About extends JFrame {
 }
