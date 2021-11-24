@@ -4,7 +4,6 @@ public class Line {
     private Vertex endPoint1;
     private Vertex endPoint2;
     private Vertex midPoint;
-    private double slope;
     private double length;
 
     public Line(Vertex p1, Vertex p2) {
@@ -14,7 +13,6 @@ public class Line {
         double y1 = p1.getY();
         double x2 = p2.getX();
         double y2 = p2.getY();
-        this.slope = (y1 - y2) / (x1 - x2);
         this.length = Math.sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
         this.midPoint = new Vertex(((int)x1 + (int)x2)/2, ((int)y1 + (int)y2)/2);
     }
@@ -31,24 +29,8 @@ public class Line {
         return midPoint;
     }
 
-    public double getSlope() {
-        return slope;
-    }
-
     public double getLength() {
         return length;
-    }
-
-    public void setEndPoint1(Vertex p1) {
-        this.endPoint1 = p1;
-    }
-
-    public void setEndPoint2(Vertex p2) {
-        this.endPoint2 = p2;
-    }
-
-    public void setSlope() {
-        this.slope = this.calculateSlope();
     }
 
     public void setLength() {
@@ -63,14 +45,6 @@ public class Line {
         int x2 = p2.getX();
         int y2 = p2.getY();
         this.midPoint = new Vertex((x1 + x2)/2, (y1 + y2)/2);
-    }
-
-    public double calculateSlope() {
-        int x1 = this.getEndPoint1().getX();
-        int y1 = this.getEndPoint1().getY();
-        int x2 = this.getEndPoint2().getX();
-        int y2 = this.getEndPoint2().getY();
-        return ((double)(y1 - y2)) / (x1 - x2);
     }
 
     public double calculateLength() {

@@ -17,32 +17,8 @@ public class Angle {
         this.oppositeDiagonalLength = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
     }
 
-    public Line getLine1() {
-        return this.line1;
-    }
-
-    public Line getLine2() {
-        return this.line2;
-    }
-
-    public double getOppositeDiagonalLength() {
-        return this.oppositeDiagonalLength;
-    }
-
     public double getAngle() {
         return this.angle;
-    }
-
-    public void setLine1(Line l) {
-        this.line1 = l;
-    }
-
-    public void setLine2(Line l) {
-        this.line2 = l;
-    }
-
-    public void setOppositeDiagonalLength(double oppositeDiagonalLength) {
-        this.oppositeDiagonalLength = oppositeDiagonalLength;
     }
 
     public void setAngle() {

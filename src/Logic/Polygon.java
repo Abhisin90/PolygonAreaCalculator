@@ -25,7 +25,7 @@ public class Polygon {
         return this.corners;
     }
 
-    public Line[] getLines() {
+    public Line[] getSides() {
         return this.sides;
     }
 

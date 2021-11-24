@@ -115,10 +115,10 @@ public class Surface extends JPanel implements MouseMotionListener {
         g.drawString(p.getAngles()[1].getAngle() + "\u00B0", p.getCorners()[1].getX() - 45, p.getCorners()[1].getY() + 25);
         g.drawString(p.getAngles()[2].getAngle() + "\u00B0", p.getCorners()[2].getX() - 40, p.getCorners()[2].getY() - 15);
         g.drawString(p.getAngles()[3].getAngle() + "\u00B0", p.getCorners()[3].getX() + 10, p.getCorners()[3].getY() - 15);
-        g.drawString(p.getLines()[0].getLength() + " units", p.getLines()[0].getMidPoint().getX() - 30, p.getLines()[0].getMidPoint().getY() - 10);
-        g.drawString(p.getLines()[1].getLength() + " units", p.getLines()[1].getMidPoint().getX() + 10, p.getLines()[1].getMidPoint().getY() + 5);
-        g.drawString(p.getLines()[2].getLength() + " units", p.getLines()[2].getMidPoint().getX() - 30, p.getLines()[2].getMidPoint().getY() + 20);
-        g.drawString(p.getLines()[3].getLength() + " units", p.getLines()[3].getMidPoint().getX() - 80, p.getLines()[3].getMidPoint().getY() + 5);
+        g.drawString(p.getSides()[0].getLength() + " units", p.getSides()[0].getMidPoint().getX() - 30, p.getSides()[0].getMidPoint().getY() - 10);
+        g.drawString(p.getSides()[1].getLength() + " units", p.getSides()[1].getMidPoint().getX() + 10, p.getSides()[1].getMidPoint().getY() + 5);
+        g.drawString(p.getSides()[2].getLength() + " units", p.getSides()[2].getMidPoint().getX() - 30, p.getSides()[2].getMidPoint().getY() + 20);
+        g.drawString(p.getSides()[3].getLength() + " units", p.getSides()[3].getMidPoint().getX() - 80, p.getSides()[3].getMidPoint().getY() + 5);
         areaButton.setText(" Area: " + p.getArea() + " unit\u00B2");
     }
 
@@ -147,17 +147,17 @@ public class Surface extends JPanel implements MouseMotionListener {
                 g.drawString(p.getAngles()[1].getAngle() + "\u00B0", p.getCorners()[1].getX() - 45, p.getCorners()[1].getY() + 25);
                 g.drawString(p.getAngles()[2].getAngle() + "\u00B0", p.getCorners()[2].getX() - 40, p.getCorners()[2].getY() - 15);
                 g.drawString(p.getAngles()[3].getAngle() + "\u00B0", p.getCorners()[3].getX() + 10, p.getCorners()[3].getY() - 15);
-                g.drawString(p.getLines()[0].getLength() + " units", p.getLines()[0].getMidPoint().getX() - 30, p.getLines()[0].getMidPoint().getY() - 10);
-                g.drawString(p.getLines()[1].getLength() + " units", p.getLines()[1].getMidPoint().getX() + 10, p.getLines()[1].getMidPoint().getY() + 5);
-                g.drawString(p.getLines()[2].getLength() + " units", p.getLines()[2].getMidPoint().getX() - 30, p.getLines()[2].getMidPoint().getY() + 20);
-                g.drawString(p.getLines()[3].getLength() + " units", p.getLines()[3].getMidPoint().getX() - 80, p.getLines()[3].getMidPoint().getY() + 5);
+                g.drawString(p.getSides()[0].getLength() + " units", p.getSides()[0].getMidPoint().getX() - 30, p.getSides()[0].getMidPoint().getY() - 10);
+                g.drawString(p.getSides()[1].getLength() + " units", p.getSides()[1].getMidPoint().getX() + 10, p.getSides()[1].getMidPoint().getY() + 5);
+                g.drawString(p.getSides()[2].getLength() + " units", p.getSides()[2].getMidPoint().getX() - 30, p.getSides()[2].getMidPoint().getY() + 20);
+                g.drawString(p.getSides()[3].getLength() + " units", p.getSides()[3].getMidPoint().getX() - 80, p.getSides()[3].getMidPoint().getY() + 5);
                 areaButton.setText(" Area: " + p.getArea() + " unit\u00B2");
 
                 p.getCorners()[vIndex].setCoordinates(x,y);
 
                 for (int i = 0; i < 4; i++) {
-                    p.getLines()[i].setLength();
-                    p.getLines()[i].setMidPoint();
+                    p.getSides()[i].setLength();
+                    p.getSides()[i].setMidPoint();
                 }
 
                 for (int i = 0; i < 4; i++) {
@@ -186,10 +186,10 @@ public class Surface extends JPanel implements MouseMotionListener {
                 g.drawString(p.getAngles()[1].getAngle() + "\u00B0", p.getCorners()[1].getX() - 45, p.getCorners()[1].getY() + 25);
                 g.drawString(p.getAngles()[2].getAngle() + "\u00B0", p.getCorners()[2].getX() - 40, p.getCorners()[2].getY() - 15);
                 g.drawString(p.getAngles()[3].getAngle() + "\u00B0", p.getCorners()[3].getX() + 10, p.getCorners()[3].getY() - 15);
-                g.drawString(p.getLines()[0].getLength() + " units", p.getLines()[0].getMidPoint().getX() - 30, p.getLines()[0].getMidPoint().getY() - 10);
-                g.drawString(p.getLines()[1].getLength() + " units", p.getLines()[1].getMidPoint().getX() + 10, p.getLines()[1].getMidPoint().getY() + 5);
-                g.drawString(p.getLines()[2].getLength() + " units", p.getLines()[2].getMidPoint().getX() - 30, p.getLines()[2].getMidPoint().getY() + 20);
-                g.drawString(p.getLines()[3].getLength() + " units", p.getLines()[3].getMidPoint().getX() - 80, p.getLines()[3].getMidPoint().getY() + 5);
+                g.drawString(p.getSides()[0].getLength() + " units", p.getSides()[0].getMidPoint().getX() - 30, p.getSides()[0].getMidPoint().getY() - 10);
+                g.drawString(p.getSides()[1].getLength() + " units", p.getSides()[1].getMidPoint().getX() + 10, p.getSides()[1].getMidPoint().getY() + 5);
+                g.drawString(p.getSides()[2].getLength() + " units", p.getSides()[2].getMidPoint().getX() - 30, p.getSides()[2].getMidPoint().getY() + 20);
+                g.drawString(p.getSides()[3].getLength() + " units", p.getSides()[3].getMidPoint().getX() - 80, p.getSides()[3].getMidPoint().getY() + 5);
                 areaButton.setText(" Area: " + p.getArea() + " unit\u00B2");
 
                 g.dispose();
