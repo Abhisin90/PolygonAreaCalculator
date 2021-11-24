@@ -25,7 +25,7 @@ public class Surface extends JPanel implements MouseMotionListener {
     public Surface(JFrame frame) {
         areaButton = new JButton();
 
-        setSize(1000, 600);
+        setSize(800, 600);
         setBackground(Color.WHITE);
         setLayout(new BorderLayout());
 
