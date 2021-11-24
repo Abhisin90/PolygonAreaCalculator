@@ -1,7 +1,5 @@
 package GUI;
 
-import Logic.Angle;
-import Logic.Line;
 import Logic.Vertex;
 
 import java.awt.*;

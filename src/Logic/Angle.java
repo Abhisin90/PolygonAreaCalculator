@@ -52,6 +52,11 @@ public class Angle {
     public double calculateAngle() {
         double l1 = line1.getLength();
         double l2 = line2.getLength();
+        int x1 = line1.getEndPoint1().getX();
+        int y1 = line1.getEndPoint1().getY();
+        int x2 = line2.getEndPoint2().getX();
+        int y2 = line2.getEndPoint2().getY();
+        this.oppositeDiagonalLength = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
         double dl = oppositeDiagonalLength;
         double angle = Math.acos((l1*l1 + l2*l2 - dl*dl) / (2*l1*l2));
         angle = Math.round(Math.toDegrees(angle)*100) / 100.0;
