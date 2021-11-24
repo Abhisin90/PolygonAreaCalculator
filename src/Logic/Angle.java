@@ -1,30 +1,20 @@
 package Logic;
 
 public class Angle {
-    private Vertex commonVertex;
     private Line line1;
     private Line line2;
+    private double oppositeDiagonalLength;
     private double angle;
 
-    Angle(Line l1, Line l2) {
+    public Angle(Line l1, Line l2) {
         this.line1 = l1;
         this.line2 = l2;
-        Vertex ep11 = l1.getEndPoint1();    // end-point 1 of line 1
-        Vertex ep21 = l1.getEndPoint2();    // end-point 2 of line 1
-        Vertex ep12 = l2.getEndPoint1();    // end-point 1 of line 2
-        Vertex ep22 = l2.getEndPoint2();    // end-point 2 of line 2
-        if (ep11 == ep12)
-            this.commonVertex = ep11;
-        else if (ep11 == ep22)
-            this.commonVertex = ep11;
-        else if (ep21 == ep12)
-            this.commonVertex = ep21;
-        else if (ep21 == ep22) 
-            this.commonVertex = ep21;
-    }
-
-    public Vertex getCommonVertex() {
-        return this.commonVertex;
+        this.angle = 90.0;
+        int x1 = l1.getEndPoint1().getX();
+        int y1 = l1.getEndPoint1().getY();
+        int x2 = l2.getEndPoint2().getX();
+        int y2 = l2.getEndPoint2().getY();
+        this.oppositeDiagonalLength = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
     }
 
     public Line getLine1() {
@@ -33,25 +23,14 @@ public class Angle {
 
     public Line getLine2() {
         return this.line2;
-    } 
+    }
+
+    public double getOppositeDiagonalLength() {
+        return this.oppositeDiagonalLength;
+    }
 
     public double getAngle() {
         return this.angle;
-    }
-
-    public void setCommonVertex() {
-        Vertex ep11 = this.line1.getEndPoint1();    // end-point 1 of line 1
-        Vertex ep21 = this.line1.getEndPoint2();    // end-point 2 of line 1
-        Vertex ep12 = this.line2.getEndPoint1();    // end-point 1 of line 2
-        Vertex ep22 = this.line2.getEndPoint2();    // end-point 2 of line 2
-        if (ep11 == ep12)
-            this.commonVertex = ep11;
-        else if (ep11 == ep22)
-            this.commonVertex = ep11;
-        else if (ep21 == ep12)
-            this.commonVertex = ep21;
-        else if (ep21 == ep22) 
-            this.commonVertex = ep21;
     }
 
     public void setLine1(Line l) {
@@ -62,18 +41,21 @@ public class Angle {
         this.line2 = l;
     }
 
+    public void setOppositeDiagonalLength(double oppositeDiagonalLength) {
+        this.oppositeDiagonalLength = oppositeDiagonalLength;
+    }
+
     public void setAngle() {
         this.angle = this.calculateAngle();
     }
 
     public double calculateAngle() {
-        double m1 = this.getLine1().getSlope();
-        double m2 = this.getLine2().getSlope();
-        double sub2 = (m1-m2)/(1+m1*m2);
-        double sub = Math.abs(sub2);
-        double angle = Math.toDegrees(Math.atan(sub));
+        double l1 = line1.getLength();
+        double l2 = line2.getLength();
+        double dl = oppositeDiagonalLength;
+        double angle = Math.acos((l1*l1 + l2*l2 - dl*dl) / (2*l1*l2));
+        angle = Math.round(Math.toDegrees(angle)*100) / 100.0;
 
-        if(sub2<0) return angle ;
-        else return 180.00-angle;
+        return angle;
     }
 }
