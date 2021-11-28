@@ -51,7 +51,7 @@ public class MainFrame extends JFrame {
         c.add(back);
 
         JPopupMenu menu = new JPopupMenu();
-        menu.setPopupSize(150, 300);
+        menu.setPopupSize(150, 60);
 
         ImageIcon share1 = new ImageIcon(MainFrame.class.getResource("images/share.png"));
         Image image1 = share1.getImage(); // transform it
