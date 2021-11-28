@@ -14,12 +14,11 @@ import javax.swing.*;
 public class ResizablePolygon extends JPanel {
 
     private java.awt.Polygon poly;
-    Rectangle2D s = new Rectangle2D.Double();
     private Rectangle2D[] vertices = new Rectangle2D[4];
     private Polygon p;
     private final int v_size = 8;
 
-    public ResizablePolygon(JTextField area1, JTextArea edge1, JTextArea angle1) {
+    public ResizablePolygon(JTextField areaText, JTextArea edgeText, JTextArea angleText) {
         Vertex[] v = {
                 new Vertex(100, 100),
                 new Vertex(500, 100),
@@ -32,7 +31,7 @@ public class ResizablePolygon extends JPanel {
             vertices[i] = new Rectangle2D.Double(p.getCorners()[i].getX(), p.getCorners()[i].getY(), v_size, v_size);
         }
 
-        ShapeResizeHandler ada = new ShapeResizeHandler(area1, edge1, angle1);
+        ShapeResizeHandler ada = new ShapeResizeHandler(areaText, edgeText, angleText);
         addMouseListener(ada);
         addMouseMotionListener(ada);
     }
@@ -55,22 +54,22 @@ public class ResizablePolygon extends JPanel {
 
         poly = new java.awt.Polygon(xs, ys, 4);
         g2.draw(poly);
+        g2.drawString("A", xs[0] - 10, ys[0] - 10);
+        g2.drawString("B", xs[1] + 10, ys[1] - 10);
+        g2.drawString("C", xs[2] + 18, ys[2] + 18);
+        g2.drawString("D", xs[3] - 18, ys[3] + 18);
     }
 
     class ShapeResizeHandler extends MouseAdapter {
         private int pos = -1;
-        JLabel A;
-        JLabel B;
-        JLabel C;
-        JLabel D;
-        JTextField area1;
-        JTextArea edge1;
-        JTextArea angle1;
+        private JTextField areaText;
+        private JTextArea edgeText;
+        private JTextArea angleText;
 
-        public ShapeResizeHandler(JTextField area1, JTextArea edge1, JTextArea angle1) {
-            this.area1 = area1;
-            this.edge1 = edge1;
-            this.angle1 = angle1;
+        public ShapeResizeHandler(JTextField areaText, JTextArea edgeText, JTextArea angleText) {
+            this.areaText = areaText;
+            this.edgeText = edgeText;
+            this.angleText = angleText;
         }
 
         public void mousePressed(MouseEvent event) {
@@ -89,7 +88,7 @@ public class ResizablePolygon extends JPanel {
 
             // Area
             p.calculateArea();
-            area1.setText(" " + p.getArea());
+            areaText.setText(" " + p.getArea());
 
             // Edge lengths
             Line[] sides = p.getSides();
@@ -100,7 +99,7 @@ public class ResizablePolygon extends JPanel {
             double BC = sides[1].getLength();
             double CD = sides[2].getLength();
             double DA = sides[3].getLength();
-            edge1.setText("AB : " + AB + "\nBC : " + BC + "\nCD : " + CD + "\nDA : " + DA);
+            edgeText.setText("AB : " + AB + "\nBC : " + BC + "\nCD : " + CD + "\nDA : " + DA);
 
             // Angles
             Angle[] angles = p.getAngles();
@@ -111,7 +110,7 @@ public class ResizablePolygon extends JPanel {
             double B = angles[1].getAngle();
             double C = angles[2].getAngle();
             double D = angles[3].getAngle();
-            angle1.setText("A : " + A + "\nB : " + B + "\nC : " + C + "\nD : " + D);
+            angleText.setText("A : " + A + "\nB : " + B + "\nC : " + C + "\nD : " + D);
 
         }
 

@@ -9,9 +9,9 @@ import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
     // text fields
-    private JTextArea angle1;
-    private JTextField area1;
-    private JTextArea edge1;
+    private JTextArea angleText;
+    private JTextField areaText;
+    private JTextArea edgeText;
 
     public MainFrame() {
         // Frame
@@ -32,11 +32,11 @@ public class MainFrame extends JFrame {
 
         // Middle Panel
 
-        angle1 = new JTextArea("A : " + 90 + "\nB : " + 90 + "\nC : " + 90 + "\nD : " + 90);
-        area1 = new JTextField("160000.00");
-        edge1 = new JTextArea("AB : " + 400 + "\nBC : " + 400 + "\nCD : " + 400 + "\nDA : " + 400);
+        angleText = new JTextArea("A : " + 90 + "\nB : " + 90 + "\nC : " + 90 + "\nD : " + 90);
+        areaText = new JTextField("160000.00");
+        edgeText = new JTextArea("AB : " + 400 + "\nBC : " + 400 + "\nCD : " + 400 + "\nDA : " + 400);
 
-        ResizablePolygon panel = new ResizablePolygon(area1, edge1, angle1);
+        ResizablePolygon panel = new ResizablePolygon(areaText, edgeText, angleText);
         panel.setBackground(Color.white);
         panel.setBounds(0, 55, 580, 750);
         panel.setLayout(new GridBagLayout());
@@ -111,11 +111,11 @@ public class MainFrame extends JFrame {
         area.setFont(font2);
         c.add(area);
 
-        area1.setFont(font2);
-        area1.setBounds(580, 100, 220, 70);
-        area1.setBackground(Color.decode("#F8E2C2"));
-        area1.setBorder(new BevelBorder(BevelBorder.LOWERED));
-        c.add(area1);
+        areaText.setFont(font2);
+        areaText.setBounds(580, 100, 220, 70);
+        areaText.setBackground(Color.decode("#F8E2C2"));
+        areaText.setBorder(new BevelBorder(BevelBorder.LOWERED));
+        c.add(areaText);
 
         // EDGE TEXT FIELD
         JLabel edge = new JLabel("EDGE LENGTH");
@@ -124,11 +124,11 @@ public class MainFrame extends JFrame {
         edge.setForeground(Color.white);
         c.add(edge);
 
-        edge1.setFont(font2);
-        edge1.setBounds(580, 220, 220, 140);
-        edge1.setBackground(Color.decode("#F8E2C2"));
-        edge1.setBorder(new BevelBorder(BevelBorder.LOWERED));
-        c.add(edge1);
+        edgeText.setFont(font2);
+        edgeText.setBounds(580, 220, 220, 140);
+        edgeText.setBackground(Color.decode("#F8E2C2"));
+        edgeText.setBorder(new BevelBorder(BevelBorder.LOWERED));
+        c.add(edgeText);
 
         // ANGLE TEXT FIELD
         JLabel angle = new JLabel("ANGLES");
@@ -137,11 +137,11 @@ public class MainFrame extends JFrame {
         angle.setForeground(Color.white);
         c.add(angle);
 
-        angle1.setFont(font2);
-        angle1.setBounds(580, 410, 220, 140);
-        angle1.setBackground(Color.decode("#F8E2C2"));
-        angle1.setBorder(new BevelBorder(BevelBorder.LOWERED));
-        c.add(angle1);
+        angleText.setFont(font2);
+        angleText.setBounds(580, 410, 220, 140);
+        angleText.setBackground(Color.decode("#F8E2C2"));
+        angleText.setBorder(new BevelBorder(BevelBorder.LOWERED));
+        c.add(angleText);
 
         frame.setLayout(null);
         frame.setVisible(true);
