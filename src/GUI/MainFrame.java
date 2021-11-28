@@ -35,10 +35,6 @@ public class MainFrame extends JFrame {
         angle1 = new JTextArea("A : " + 90 + "\nB : " + 90 + "\nC : " + 90 + "\nD : " + 90);
         area1 = new JTextField("160000.00");
         edge1 = new JTextArea("AB : " + 400 + "\nBC : " + 400 + "\nCD : " + 400 + "\nDA : " + 400);
-        JLabel A = new JLabel("A");
-        JLabel B = new JLabel("B");
-        JLabel C = new JLabel("C");
-        JLabel D = new JLabel("D");
 
         ResizablePolygon panel = new ResizablePolygon(area1, edge1, angle1);
         panel.setBackground(Color.white);
@@ -103,7 +99,7 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                new MainFrame().setVisible(true);
+                new MainFrame();
             }
         });
 
@@ -120,14 +116,6 @@ public class MainFrame extends JFrame {
         area1.setBackground(Color.decode("#F8E2C2"));
         area1.setBorder(new BevelBorder(BevelBorder.LOWERED));
         c.add(area1);
-        A.setLocation(100, 100);
-        B.setLocation(500, 100);
-        C.setLocation(500, 500);
-        D.setLocation(100, 500);
-        c.add(A);
-        c.add(B);
-        c.add(C);
-        c.add(D);
 
         // EDGE TEXT FIELD
         JLabel edge = new JLabel("EDGE LENGTH");
