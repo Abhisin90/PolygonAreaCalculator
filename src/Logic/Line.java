@@ -13,8 +13,8 @@ public class Line {
         double y1 = p1.getY();
         double x2 = p2.getX();
         double y2 = p2.getY();
-        this.length = Math.sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
-        this.midPoint = new Vertex(((int)x1 + (int)x2)/2, ((int)y1 + (int)y2)/2);
+        this.length = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+        this.midPoint = new Vertex(((int) x1 + (int) x2) / 2, ((int) y1 + (int) y2) / 2);
     }
 
     public Vertex getEndPoint1() {
@@ -44,7 +44,7 @@ public class Line {
         int y1 = p1.getY();
         int x2 = p2.getX();
         int y2 = p2.getY();
-        this.midPoint = new Vertex((x1 + x2)/2, (y1 + y2)/2);
+        this.midPoint = new Vertex((x1 + x2) / 2, (y1 + y2) / 2);
     }
 
     public double calculateLength() {
@@ -52,6 +52,6 @@ public class Line {
         int y1 = this.getEndPoint1().getY();
         int x2 = this.getEndPoint2().getX();
         int y2 = this.getEndPoint2().getY();
-        return Math.round(Math.sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2))*100.0) / 100.0;
+        return Math.round(Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)) * 100.0) / 100.0;
     }
 }

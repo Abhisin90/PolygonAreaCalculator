@@ -14,7 +14,7 @@ public class Angle {
         int y1 = l1.getEndPoint1().getY();
         int x2 = l2.getEndPoint2().getX();
         int y2 = l2.getEndPoint2().getY();
-        this.oppositeDiagonalLength = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+        this.oppositeDiagonalLength = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
     }
 
     public double getAngle() {
@@ -32,10 +32,10 @@ public class Angle {
         int y1 = line1.getEndPoint1().getY();
         int x2 = line2.getEndPoint2().getX();
         int y2 = line2.getEndPoint2().getY();
-        this.oppositeDiagonalLength = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+        this.oppositeDiagonalLength = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
         double dl = oppositeDiagonalLength;
-        double angle = Math.acos((l1*l1 + l2*l2 - dl*dl) / (2*l1*l2));
-        angle = Math.round(Math.toDegrees(angle)*100) / 100.0;
+        double angle = Math.acos((l1 * l1 + l2 * l2 - dl * dl) / (2 * l1 * l2));
+        angle = Math.round(Math.toDegrees(angle) * 100) / 100.0;
 
         return angle;
     }

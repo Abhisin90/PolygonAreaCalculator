@@ -10,14 +10,13 @@ public class Polygon {
         corners = v;
         sides = new Line[4];
         angles = new Angle[4];
-        // Assume anticlockwise traversal starting from bottom-left vertex and bottom side
 
         for (int i = 0; i < 4; i++) {
-            sides[i] = new Line(corners[i], corners[(i+1)%4]);
+            sides[i] = new Line(corners[i], corners[(i + 1) % 4]);
         }
 
         for (int i = 0; i < 4; i++) {
-            angles[i] = new Angle(sides[(i+3)%4], sides[i]);
+            angles[i] = new Angle(sides[(i + 3) % 4], sides[i]);
         }
     }
 
@@ -39,9 +38,9 @@ public class Polygon {
 
     public void calculateArea() {
         double a = 0;
-        for (int i=0; i<4; i++) {
-            a += corners[i].getX()*corners[(i+1)%4].getY() - corners[(i+1)%4].getX()*corners[i].getY();
+        for (int i = 0; i < 4; i++) {
+            a += corners[i].getX() * corners[(i + 1) % 4].getY() - corners[(i + 1) % 4].getX() * corners[i].getY();
         }
-        this.area = a*0.5;
+        this.area = a * 0.5;
     }
 }
