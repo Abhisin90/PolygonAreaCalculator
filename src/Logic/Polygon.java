@@ -41,6 +41,6 @@ public class Polygon {
         for (int i = 0; i < 4; i++) {
             a += corners[i].getX() * corners[(i + 1) % 4].getY() - corners[(i + 1) % 4].getX() * corners[i].getY();
         }
-        this.area = a * 0.5;
+        this.area = Math.abs(a * 0.5);
     }
 }
