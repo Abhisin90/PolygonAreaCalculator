@@ -102,8 +102,8 @@ public class MainFrame extends JFrame {
         Reset.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
                 new MainFrame().setVisible(true);
-
             }
         });
 
